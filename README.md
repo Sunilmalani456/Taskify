@@ -34,3 +34,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+<!-- // This is a custom prop that we want to add to all components in the library (not just one) and we want to make it optional (not required) so that it doesn't throw an error when we use it in the components that don't need it. this is useful for the PopoverTrigger and PopoverClose components in the form-popover.tsx file. -->

@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 
 import { ActionState, FieldErrors } from "@/lib/create-safe-action";
+import { toast } from "sonner";
 
 type Action<TInput, TOutput> = (
   data: TInput
@@ -29,6 +30,20 @@ export const useAction = <TInput, TOutput>(
 
       try {
         const result = await action(input);
+
+        // await toast.promise(
+        //   Promise.resolve(result),
+        //   {
+        //     loading: "Creating board...",
+        //     success: () => {
+        //       if (result?.fieldErrors?.title?.length > 0) {
+        //         return result.error;
+        //       }
+        //       return "Board created 😀";
+        //     },
+        //     error: "Failed to create board",
+        //   }
+        // );
 
         if (!result) {
           return;
