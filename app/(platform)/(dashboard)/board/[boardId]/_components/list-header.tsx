@@ -1,6 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
+import ListOptions from "./list-options";
 import { FormInput } from "@/components/form/form-input";
 import { useEventListener } from "usehooks-ts";
 
@@ -99,6 +100,13 @@ const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
+
+      <ListOptions
+        data={data}
+        onAddCard={() =>
+          toast.info(`Payment🤑 Method is not available yet....`)
+        }
+      />
     </div>
   );
 };
