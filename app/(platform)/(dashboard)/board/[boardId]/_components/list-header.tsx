@@ -13,9 +13,10 @@ import { useState, useRef, ElementRef } from "react";
 
 interface ListHeaderProps {
   data: List;
+  onAddCard: () => void;
 }
 
-const ListHeader = ({ data }: ListHeaderProps) => {
+const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
   const [title, setTitle] = useState(data.title);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -101,12 +102,7 @@ const ListHeader = ({ data }: ListHeaderProps) => {
         </div>
       )}
 
-      <ListOptions
-        data={data}
-        onAddCard={() =>
-          toast.info(`Payment🤑 Method is not available yet....`)
-        }
-      />
+      <ListOptions data={data} onAddCard={onAddCard} />
     </div>
   );
 };
