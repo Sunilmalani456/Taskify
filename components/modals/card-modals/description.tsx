@@ -52,10 +52,13 @@ export const Description = ({ data }: DescriptionProps) => {
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: ["card", data.id],
-      });
+      }); // this mean that the cache will be invalidated and the data will be refetched from the server when the next request is made to the server for the same data
+      // explaination -> https://react-query.tanstack.com/guides/invalidations#query-invalidation  // queryKey is the key that identifies the query in the cache
+
       queryClient.invalidateQueries({
         queryKey: ["card-logs", data.id],
       });
+      
       toast.success(`Card "${data.title}" updated`);
       disableEditing();
     },
